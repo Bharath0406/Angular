@@ -1,0 +1,17 @@
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+    }
+    
+    .Yesbox {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    
+    .Nobox {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }

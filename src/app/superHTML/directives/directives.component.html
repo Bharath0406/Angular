@@ -1,0 +1,94 @@
+Friends:{{ friends}}
+<ul>
+    <li *ngFor="let f of friends; let  counter=index">
+        {{f}}.counter number {{counter}}
+        <button (click)="displayText(counter)"> click {{ f }}  </button>
+    </li>
+</ul>
+
+
+<hr>
+<div>
+    demo of *ngFor directives with JSOn array:
+    <table border="1">
+        <thead>
+            <tr>
+                <th>s.no</th>
+                <th>city</th>
+                <th>std</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of locations">
+                <td>{{ l.id }} </td>
+                <td>{{ l.city }}</td>
+                <td>{{ l.code }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    demo of *ngFor directives with JSOn array:
+    <table border="1">
+        <thead>
+            <tr>
+                <th>s.id</th>
+                <th>username</th>
+                <th>zipcode</th>
+                <th>latitude</th>
+                <th>langitude</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let U of user">
+                <td>{{ U.id }} </td>
+                <td>{{ U.username }}</td>
+                <td>{{ U.address.zipcode }}</td>
+                <td>{{ U.address.geo.lat }} </td>
+                <td>{{ U.address.geo.lng }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+
+<div>
+    demo for *ngif directive:
+    <button (click)="toggleCheck()">Toggle Check</button>
+    <div class="box" *ngIf="check">
+
+    </div>
+    <hr>
+
+    <div>
+        demo of *ngif directive else criteria:
+        <button (click)="toggleelseCheck()">Toggle Check</button>
+        <div class="Yesbox" *ngIf="checkelse;  else elseTemplate">
+            i am here!
+            <button>T</button>
+        </div>
+
+        <ng-template #elseTemplate>
+            <div class="Nobox">
+                Hip Hip Hurray
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<hr> demo for switchcase
+
+<div [ngSwitch]="city">
+    <span *ngSwitchCase="'044'">chennai</span>
+    <span *ngSwitchCase="'022'">bangalore</span>
+    <span *ngSwitchCase="'011'">kolkatta</span>
+    <span *ngSwitchCase="'033'">hydrabad</span>
+    <span *ngSwitchDefault>code city not available</span>
+</div>
+<div>
+
+</div>
+
+<hr>
